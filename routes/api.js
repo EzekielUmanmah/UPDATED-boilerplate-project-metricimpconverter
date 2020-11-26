@@ -19,7 +19,8 @@ module.exports = function (app) {
     .get(function (req, res){
 
       let input = req.query.input;
-
+      if(!input) return res.send('invalid unit')
+      
       let initNum = convertHandler.getNum(input);
       let initUnit = convertHandler.getUnit(input);
       
